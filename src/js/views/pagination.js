@@ -1,7 +1,6 @@
 import View from "./View.js";
 import { desired_number_of_search_result_cards } from "../configuration.js";
 import icons from "url:../../img/icons.svg";
-import { Fraction } from "fractional";
 
 class PaginationView extends View {
   _parent_element = document.querySelector(".pagination");
