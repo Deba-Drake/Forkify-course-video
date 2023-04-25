@@ -26,7 +26,6 @@ export const load_recipe = async function (id) {
     } else {
       state.recipe.bookmarked = false;
     }
-    console.log(state.recipe);
   } catch (error) {
     throw error;
   }
@@ -114,9 +113,6 @@ export const upload_recipe = async function (recieved_recipe) {
     servings: +recieved_recipe.servings,
     ingredients,
   };
-  // console.log(ingredients);
-  // console.log(recieved_recipe);
-  // console.log(recipe);
   const data = await post_json(`${api_url}?key=${api_key}`, recipe);
   state.recipe = Object.assign({}, data.data.recipe);
   add_bookmark(state.recipe);

@@ -28,14 +28,12 @@ export default class View {
 
     new_Elements.forEach((new_element, index) => {
       const current_element = current_Elements[index];
-      // console.log(current_element, new_element.isEqualNode(current_element));
 
       //Updates changes in TEXTCONTEXT
       if (
         !new_element.isEqualNode(current_element) &&
         new_element?.firstChild?.nodeValue.trim() !== ""
       ) {
-        // console.log("YESYS", new_element.firstChild.nodeValue.trim());
         current_element.textContent = new_element.textContent;
       }
 
@@ -54,7 +52,6 @@ export default class View {
 
   //method to render the spinner
   render_spinner() {
-    console.log(this._parent_element);
     const markup = `
     <div class="spinner">
       <svg>

@@ -33,7 +33,6 @@ const control_recipes = async function () {
     recipeView.render(model.state.recipe);
   } catch (error) {
     //Rendering Error in for "rendering recipe"
-    console.log(error);
     new View().render_error_message(error);
   }
 };
@@ -117,7 +116,6 @@ const control_add_recipe = async function (recieved_recipe) {
 
   //to Upload the new Recipe data
   await model.upload_recipe(recieved_recipe);
-  console.log(model.state.recipe);
 
   //to Render the Uploaded data
   recipeView.render(model.state.recipe);
@@ -132,7 +130,6 @@ const control_add_recipe = async function (recieved_recipe) {
     );
   }
 
-  console.log(model.state.recipe.id);
   //Change ID in URL when Reloaded
   window.history.pushState(null, "", `#${model.state.recipe.id}`);
 
