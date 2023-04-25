@@ -13,8 +13,6 @@ import bookmarkView from "./views/bookmarkView.js";
 import View from "./views/View.js";
 import { async } from "regenerator-runtime";
 
-console.log("STARTING");
-
 //FUNCTION TO CONTROL THE RECIPES
 const control_recipes = async function () {
   try {
@@ -150,6 +148,10 @@ const control_add_recipe = async function (recieved_recipe) {
   }, 1500);
 };
 
+const new_feature = function () {
+  console.log("Welcome USER to the Application!");
+};
+
 const init = function () {
   addRecipeView.add_handler_upload(control_add_recipe);
   bookmarkView.add_render_bookmark(control_stored_bookmarks);
@@ -158,6 +160,7 @@ const init = function () {
   recipeView.add_render_bookmark(control_bookmarks);
   searchView.add_search_handler(control_searches);
   pagination.add_pagination_handler(control_pagination);
+  new_feature();
 };
 init();
 
